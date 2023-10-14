@@ -1,6 +1,5 @@
-NAME	= megaphone
-OBJ_DIR	= objs/
-SRC_FIL	= megaphone
+NAME	= awesome_phonebook
+SRC_FIL	= main
 
 CPP		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
@@ -14,20 +13,14 @@ SRCS	= $(addsuffix .cpp, $(SRC_FIL))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):
 	@$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
-	@echo $(BORG)"... megaphone ..."$(ENDCL)
-
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	@mkdir -p $(OBJ_DIR)
-	@$(CPP) $(CFLAGS) -c $< -o $@
+	@echo $(BORG)"... awesome phonebook ..."$(ENDCL)
 
 clean:
-	@$(RM) $(OBJ_DIR)
 	@echo $(SYEL)"... finished cleaning ..."$(ENDCL)
 
 fclean: clean
-	@$(RM) $(OBJ_DIR)
 	@$(RM) $(NAME)
 	@$(RM) $(NAME).dSYM
 	@$(RM) .DS_Store

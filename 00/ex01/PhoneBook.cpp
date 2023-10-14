@@ -4,7 +4,7 @@
 
 PhoneBook::PhoneBook(void) {
 
-	// Initialise latest accessed contact index.
+	// Initialise repetitively in-used variables.
 	current_contact = 0;
 	max_contact = 8;
 	default_width = 10;
@@ -85,7 +85,7 @@ void PhoneBook::format_print(std::string input) {
 
 	int space_size;
 
-	if (input.length() < PhoneBook::default_width) {
+	if ((int)input.length() < PhoneBook::default_width) {
 		space_size = PhoneBook::default_width - input.length();
 		for (int i = 0; i < space_size; i++) {
 			std::cout << " ";
@@ -137,9 +137,8 @@ void PhoneBook::print_all_contact(void) {
 	std::cout << "└╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘" << std::endl;
 }
 
-int PhoneBook::is_index_valid(std::string index) {
 
-	int valid_flag;
+int PhoneBook::is_index_valid(std::string index) {
 
 	for (int i = 0; i < PhoneBook::max_contact; i++) {
 		if (!index.compare(std::to_string(i + 1))) {
@@ -148,6 +147,7 @@ int PhoneBook::is_index_valid(std::string index) {
 	}
 	return 0;
 }
+
 
 void PhoneBook::print_selected_contact(void) {
 
@@ -174,6 +174,7 @@ void PhoneBook::print_selected_contact(void) {
 	}
 
 }
+
 
 void PhoneBook::search_contact(void) {
 

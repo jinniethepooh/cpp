@@ -14,6 +14,7 @@ class Contact {
 		std::string phone_number;
 		std::string secrecy;
 
+		// -----> Constructor and destructor
 		Contact(void);
 		~Contact(void);
 };

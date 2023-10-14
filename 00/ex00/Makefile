@@ -1,5 +1,4 @@
 NAME	= megaphone
-OBJ_DIR	= objs/
 SRC_FIL	= megaphone
 
 CPP		= g++
@@ -14,20 +13,14 @@ SRCS	= $(addsuffix .cpp, $(SRC_FIL))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):
 	@$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
 	@echo $(BORG)"... megaphone ..."$(ENDCL)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	@mkdir -p $(OBJ_DIR)
-	@$(CPP) $(CFLAGS) -c $< -o $@
-
 clean:
-	@$(RM) $(OBJ_DIR)
 	@echo $(SYEL)"... finished cleaning ..."$(ENDCL)
 
 fclean: clean
-	@$(RM) $(OBJ_DIR)
 	@$(RM) $(NAME)
 	@$(RM) $(NAME).dSYM
 	@$(RM) .DS_Store

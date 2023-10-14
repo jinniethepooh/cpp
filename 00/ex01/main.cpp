@@ -22,7 +22,7 @@ void distribute_job(std::string command, PhoneBook *book) {
 	}
 }
 
-int	main(int argc, char **argv) {
+int	main(void) {
 
 	std::string command;
 	std::cout << welcome_msg << std::endl;
